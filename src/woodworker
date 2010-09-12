@@ -1,11 +1,15 @@
 #!/bin/bash
-#################################
+#################################################
 #
-# My Personal Dev Helper Script
+# woodworker 0.1
+# configurable linux helper script
 #
-#
-#################################
+# http://github.com/woodworker/woodworker
+# woodworker is licensed under the MIT License
+# 
+#################################################
 
+WWVERSION="0.1"
 WW=`pwd`
 
 if [ ! -d $WW/.woodworker ]
