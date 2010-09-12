@@ -1,0 +1,58 @@
+#!/bin/bash
+#################################
+#
+# My Personal Dev Helper Script
+#
+#
+#################################
+
+WW=`pwd`
+
+if [ ! -d $WW/.woodworker ]
+then
+	echo "keine woodworker Konfiguration zu finden"
+	exit 0
+fi
+
+WWCONF="${WW}/.woodworker"
+PROJECT=$1;
+ACTION=$2;
+
+if [ "$PROJECT" == "" ]
+then
+	echo "Kein Projekt übergeben"
+	echo "Projektlist: "
+	ls $WWCONF/scripts/
+	exit 0;
+fi
+
+
+
+if [ ! -f $WWCONF/scripts/$PROJECT ]
+then
+	echo "Projektdefinition kann nicht gefunden werden"
+	exit 0
+fi
+
+ASSETS=$WWCONF/assets/$PROJECT
+
+. $WWCONF/scripts/$PROJECT
+
+if [ "$ACTION" == "" ]
+then
+	ACTION="index"
+fi
+
+
+FUNC="${PROJECT}_$ACTION"
+
+
+type "$FUNC" &> /dev/null
+FUNCCHECK=$?
+if [ ! $FUNCCHECK -eq 0 ]
+then
+	echo "Methode $ACTION nicht für $PROJECT definiert"
+	exit 0
+fi
+
+$FUNC

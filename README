@@ -1,0 +1,30 @@
+woodworker
+=========
+
+woodworker is a tiny little helperscript for the daily
+project work on linux
+
+
+Usage:
+======
+
+woodworker <projectname> [<action>]
+
+if <action> is not given woodworker asumes you mean
+the action called "index"
+
+
+Configuration
+=============
+
+woodworker stores all its information in a hidden folder
+named .woodworker
+
+in this folder there are 2 subfolder scripts and assests
+in scripts are all the "project" helper scripts are stored
+every project has one helperfile with the name of the project
+
+in short the call of "woodworker example test" means that
+woodworker looks in your current working dir for the folder
+.woodworker and checks in scripts if there is a files called
+example and would call the bash method example_test

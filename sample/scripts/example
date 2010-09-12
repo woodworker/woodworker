@@ -1,0 +1,20 @@
+function example_index() {
+	echo "Welcome to the Example"
+	echo "Actions: "
+	echo " test		Test Action"
+	echo " vars		Show some woodworker Variables"
+}
+
+function example_test() {
+	echo "Hello World"
+}
+
+function example_vars() {
+	echo "woodworker Variables (for use in scripts)"
+	echo "WW	$WW"
+	echo "ASSETS	$ASSETS"
+}
+
+function example_banner() {
+	cat $ASSETS/banner
+}
