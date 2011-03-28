@@ -1,7 +1,7 @@
 #!/bin/bash
 #################################################
 #
-# woodworker 0.1
+# woodworker 0.2
 # configurable linux helper script
 #
 # http://github.com/woodworker/woodworker
@@ -9,12 +9,25 @@
 # 
 #################################################
 
-WWVERSION="0.1"
+WWVERSION="0.2"
 WW=`pwd`
+
+
+function initWoodworker( ){
+    mkdir -p $WW/.woodworker/scripts
+    mkdir -p $WW/.woodworker/assets
+}
 
 if [ ! -d $WW/.woodworker ]
 then
-	echo "keine woodworker Konfiguration zu finden"
+    if [[ "$1" == "init" ]]
+    then
+        echo "Initialisiere woodworker verzeichniss"
+        initWoodworker
+    else
+    	echo "keine woodworker Konfiguration zu finden"
+    fi
+
 	exit 0
 fi
 
