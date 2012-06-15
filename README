@@ -8,7 +8,7 @@ project work on linux
 Usage:
 ======
 
-woodworker <projectname> [<action>]
+woodworker <projectname> [<action> [<parameters>]]
 
 if <action> is not given woodworker asumes you mean
 the action called "index"
@@ -28,3 +28,12 @@ in short the call of "woodworker example test" means that
 woodworker looks in your current working dir for the folder
 .woodworker and checks in scripts if there is a files called
 example and would call the bash method example_test
+
+Start
+=====
+
+To start in the actual directory you just need to type
+woodworker init
+
+This will create the .woodworker directory with the scripts and assets
+subfolder.
